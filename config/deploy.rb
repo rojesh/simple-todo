@@ -4,10 +4,10 @@ lock '3.4.0'
 set :application, 'simple-todo'
 set :repo_url, 'git@github.com:rojesh/simple-todo.git'
 
-
-set :user, 'ubuntu'
+set :user, 'deploy'
+set :tmp_dir, "/home/#{fetch(:user)}"
 set :ssh_options, {
-  user: 'ubuntu',
+  user: 'deploy',
   keys: %w(~/.ssh/id_rsa),
   forward_agent: true,
   port: 22,
@@ -17,7 +17,7 @@ set :ssh_options, {
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www'
+set :deploy_to, '/home/deploy'
 
 # Default value for :scm is :git
 set :scm, :git

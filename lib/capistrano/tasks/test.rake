@@ -9,5 +9,3 @@ namespace :todoapp do
     end
   end
 end
-
-after 'deploy:updated', 'todoapp:make_directory'
